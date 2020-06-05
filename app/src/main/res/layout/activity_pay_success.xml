@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray"/>
+
+    <LinearLayout
+        android:id="@+id/pay_loading_layout"
+        style="@style/ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loadView"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:indicatorColor="@color/colorAccent"
+            app:indicatorName="BallSpinFadeLoaderIndicator" />
+
+        <TextView
+            android:id="@+id/pay_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="等待支付结果"
+            android:textColor="@color/font_title"
+            android:textSize="@dimen/font_title" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/pay_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+        <LinearLayout
+            style="@style/ContentStyle"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/iv_status"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@mipmap/ic_success" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/font_content"
+                android:textSize="@dimen/font_title" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/line_gray"/>
+
+        <LinearLayout
+            style="@style/ContentStyle"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <com.fumiao.core.widget.ItemArrowLayout
+                android:id="@+id/order_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:arrow_visibility="false"
+                app:des="0元"
+                app:text="收款金额"></com.fumiao.core.widget.ItemArrowLayout>
+            <com.fumiao.core.widget.ItemArrowLayout
+                android:id="@+id/order_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:arrow_visibility="false"
+                app:des=""
+                app:text="订单编号"></com.fumiao.core.widget.ItemArrowLayout>
+            <com.fumiao.core.widget.ItemArrowLayout
+                android:id="@+id/order_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:arrow_visibility="false"
+                app:des=""
+                app:text="订单时间"></com.fumiao.core.widget.ItemArrowLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/btn_press_bg"
+            android:layout_gravity="center"
+            android:textSize="@dimen/font_title" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

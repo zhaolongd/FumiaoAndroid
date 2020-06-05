@@ -10,13 +10,9 @@ import android.text.InputType;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
-
 import com.fumiao.core.R;
 import com.fumiao.core.widget.MyKeyBoardView;
-
 import java.lang.reflect.Method;
-import java.text.DecimalFormat;
 
 /**
  * 自定义键盘
@@ -24,33 +20,15 @@ import java.text.DecimalFormat;
  */
 public class KeyboardUtil {
     private Activity mActivity;
-    private boolean  mIfRandom;
-
     private MyKeyBoardView mKeyboardView;
     private Keyboard mKeyboardNumber;//数字键盘
     private EditText mEditText;
-    private TextView mTextView;
-    public KeyboardUtil(Activity activity) {
-        this(activity, false);
-        decimalToString(mEditText.getText().toString());
-    }
 
-    public KeyboardUtil(Activity activity, boolean ifRandom) {
+    public KeyboardUtil(Activity activity) {
         this.mActivity = activity;
-        this.mIfRandom = ifRandom;
         mKeyboardNumber = new Keyboard(mActivity, R.xml.keyboardnumber);
         mKeyboardView = (MyKeyBoardView) mActivity.findViewById(R.id.keyboard_view);
     }
-
-    public String decimalToString(String num){
-        if(num.isEmpty()){
-            return "";
-        }
-        Double cny = Double.parseDouble(num);//转换成Double
-        //使用0.00不足位补0，#.##仅保留有效位
-        return new DecimalFormat("0.00").format(cny);
-    }
-
 
     /**
      * edittext绑定自定义键盘
@@ -62,16 +40,7 @@ public class KeyboardUtil {
         hideSystemSofeKeyboard(mActivity.getApplicationContext(), mEditText);
         showSoftKeyboard();
     }
-    /**
-     * edittext绑定自定义键盘
-     *
-     * @param textView 需要绑定自定义键盘的textView
-     */
-    public void attachTos(TextView textView) {
-        this.mTextView = textView;
-        hideSystemSofeKeyboards(mActivity.getApplicationContext(), mTextView);
-        showSoftKeyboard();
-    }
+
     public void showSoftKeyboard() {
         if (mKeyboardNumber == null) {
             mKeyboardNumber = new Keyboard(mActivity, R.xml.keyboardnumber);
@@ -79,14 +48,11 @@ public class KeyboardUtil {
         if (mKeyboardView == null) {
             mKeyboardView = (MyKeyBoardView) mActivity.findViewById(R.id.keyboard_view);
         }
-
-            mKeyboardView.setKeyboard(mKeyboardNumber);
-
+        mKeyboardView.setKeyboard(mKeyboardNumber);
         mKeyboardView.setEnabled(true);
         mKeyboardView.setPreviewEnabled(false);
         mKeyboardView.setVisibility(View.VISIBLE);
         mKeyboardView.setOnKeyboardActionListener(mOnKeyboardActionListener);
-
     }
 
     private KeyboardView.OnKeyboardActionListener mOnKeyboardActionListener = new KeyboardView.OnKeyboardActionListener() {
@@ -149,7 +115,6 @@ public class KeyboardUtil {
 
         }
 
-
     };
 
 
@@ -183,37 +148,6 @@ public class KeyboardUtil {
         imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
 
-
-    /**
-     * 隐藏系统键盘
-     *
-     * @param textView
-     */
-    public static void hideSystemSofeKeyboards(Context context, TextView textView) {
-        int sdkInt = Build.VERSION.SDK_INT;
-        if (sdkInt >= 11) {
-            try {
-                Class<EditText> cls = EditText.class;
-                Method setShowSoftInputOnFocus;
-                setShowSoftInputOnFocus = cls.getMethod("setShowSoftInputOnFocus", boolean.class);
-                setShowSoftInputOnFocus.setAccessible(true);
-                setShowSoftInputOnFocus.invoke(textView, false);
-
-            } catch (SecurityException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            textView.setInputType(InputType.TYPE_NULL);
-        }
-        // 如果软键盘已经显示，则隐藏
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(textView.getWindowToken(), 0);
-    }
-
     public interface OnOkClick {
         void onOkClick();
     }
@@ -232,14 +166,6 @@ public class KeyboardUtil {
     public void setOnCancelClick(onCancelClick onCancelClick) {
         mOnCancelClick = onCancelClick;
     }
-
-
-    private boolean isNumber(String str) {
-        String wordstr = "0123456789";
-        return wordstr.contains(str);
-    }
-
-
 
     public void hideKeyboard() {
         int visibility = mKeyboardView.getVisibility();

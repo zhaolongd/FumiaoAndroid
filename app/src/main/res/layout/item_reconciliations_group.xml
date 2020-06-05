@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:padding="15dp"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_content"
+        android:textColor="@color/font_content"
+        android:layout_centerVertical="true"
+        android:text="2019年08月12日"/>
+    <TextView
+        android:id="@+id/tv_total_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tv_total_orders"
+        android:layout_marginRight="25dp"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/font_content"
+        android:textColor="@color/font_content"
+        android:text="0.00元"/>
+
+    <TextView
+        android:id="@+id/tv_total_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/group_state"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/font_content"
+        android:textColor="@color/font_content"
+        android:text="0笔" />
+
+    <ImageView
+        android:id="@+id/group_state"
+        android:layout_width="16dp"
+        android:layout_height="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/store_head_layout"
+        style="@style/ContentStyle"
+        android:layout_marginTop="1dp"
+        android:divider="@drawable/line"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+        <TextView
+            style="@style/MeItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_content2"
+            android:layout_weight="1"
+            android:text="@string/store_head" />
+
+        <com.fumiao.core.widget.CircleImageView
+            android:id="@+id/store_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/home_head" />
+        <ImageView
+            android:id="@+id/arrow_layout_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/ic_arrow" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/ContentStyle"
+        android:divider="@drawable/line"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/store_name"
+            style="@style/MeItem"
+            app:arrow_visibility="false"
+            app:des="门店名称"
+            app:text="@string/store_name"/>
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/store_type"
+            style="@style/MeItem"
+            app:arrow_visibility="false"
+            app:des="西式餐饮、甜点"
+            app:text="@string/main_camp_type"/>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/addr"
+            style="@style/MeItem"
+            app:arrow_visibility="false"
+            app:des="江西省南昌市"
+            app:text="@string/location"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:padding="15dp"
+                android:text="门店地址"
+                android:textColor="@color/font_content2"
+                android:textSize="@dimen/font_content" />
+            <EditText
+                android:id="@+id/ed_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:textColor="#787878"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:paddingBottom="80dp"
+                android:textSize="@dimen/font_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="20dp"
+        android:text="确认修改"
+        android:textColor="@color/white"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/btn_press_bg"
+        android:layout_gravity="center"
+        android:textSize="@dimen/font_btn" />
+
+</LinearLayout>

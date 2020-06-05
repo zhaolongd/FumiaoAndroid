@@ -14,9 +14,9 @@
 
         <TextView
             android:id="@+id/oil_edit_key"
-            android:layout_width="110dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/font_key"
+            android:textColor="@color/font_content"
             android:textSize="@dimen/font_content" />
 
         <EditText
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginLeft="70dp"
-        android:background="@color/orange"
+        android:background="@color/light_pink"
         android:visibility="gone" />
 
 </LinearLayout>

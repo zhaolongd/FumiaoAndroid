@@ -227,13 +227,6 @@ public class DateUtils {
         return sd;
     }
 
-    public static String strToDate3(String strDate) {
-        long timeStamp = Long.parseLong(strDate) * 1000l;  //获取当前时间戳,也可以是你自已给的一个随机的或是别人给你的时间戳(一定是long型的数据)
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//这个是你要转成后的时间的格式
-        String sd = sdf.format(new Date(timeStamp));   // 时间戳转换成时间
-        return sd;
-    }
-
     /*
      * 将时间转换为时间戳
      */

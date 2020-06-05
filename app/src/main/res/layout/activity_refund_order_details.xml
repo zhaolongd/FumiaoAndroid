@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/font_des"
+            android:textSize="@dimen/font_content"
+            android:text="@string/refund_amount"/>
+        <TextView
+            android:id="@+id/refund_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/fail_color"
+            android:layout_marginTop="5dp"
+            android:textSize="30dp" />
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/pay_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des="@string/refund_success"
+            app:text="@string/transaction_status"></com.fumiao.core.widget.ItemArrowLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical">
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/refund_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="@string/refund_time"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/refund_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="@string/refund_type"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/refund_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="@string/refund_person"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/refund_store"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="@string/refund_store"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="@string/origin_order_no"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/refund_order_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="@string/refund_order_no"></com.fumiao.core.widget.ItemArrowLayout>
+    </LinearLayout>
+
+    <com.fumiao.core.widget.ItemArrowLayout
+        android:background="@color/white"
+        android:id="@+id/order_detail"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:arrow_visibility="true"
+        app:des=""
+        app:text="@string/origin_order_detail"></com.fumiao.core.widget.ItemArrowLayout>
+
+</LinearLayout>

@@ -20,15 +20,18 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
-public static java.lang.String TABLENAME;
-}
--keep class **$Properties {*;}
+#极光推送混淆
+-dontwarn com.xiaomi.push.**
+-keep class com.xiaomi.push.**{*;}
+-keep class com.huawei.hms.**{*;}
+-dontwarn com.coloros.mcsdk.**
+-keep class com.coloros.mcsdk.** { *; }
 
-# If you do not use SQLCipher:
--dontwarn net.sqlcipher.database.**
-# If you do not use RxJava:
--dontwarn rx.**
+-dontwarn com.huawei.**
+-keep public class * extends android.app.Activity
+-keep interface com.huawei.android.hms.agent.common.INoProguard {*;}
+-keep class * extends com.huawei.android.hms.agent.common.INoProguard {*;}
+
 
 #eventbus
 -keepattributes *Annotation*
@@ -65,8 +68,6 @@ public static java.lang.String TABLENAME;
 -keep interface android.support.v7.app.** { *; }
 -dontwarn android.support.**    # 忽略警告
 
-#保持注解继承类不混淆
--keep class * extends java.lang.annotation.Annotation {*;}
 #保持Serializable实现类不被混淆
 -keepnames class * implements java.io.Serializable
 #保持Serializable不被混淆并且enum 类也不被混淆
@@ -105,7 +106,7 @@ public static java.lang.String TABLENAME;
 -keep class com.idea.fifaalarmclock.entity.***
 -keep class com.google.gson.** { *; }
 #JavaBean
--keep class com.fumiao.assistant.bean.** { *; }
+-keep class com.fumiao.pay.bean.** { *; }
 
 #忽略 libiary 混淆
 -keep class io.vov.vitamio.** { *; }
@@ -135,50 +136,17 @@ public static java.lang.String TABLENAME;
 -keep class com.allenliu.versionchecklib.**{*;}
 -ignorewarnings
 
+-keep class com.iflytek.**{*;}
+-keepattributes Signature
+
+#AVLoading
+-keep class com.wang.avi.** { *; }
+-keep class com.wang.avi.indicators.** { *; }
+
 #bugly
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
 
-#PictureSelector 2.0
--keep class com.luck.picture.lib.** { *; }
-
--dontwarn com.yalantis.ucrop**
--keep class com.yalantis.ucrop** { *; }
--keep interface com.yalantis.ucrop** { *; }
-
- #rxjava
--dontwarn sun.misc.**
--keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
- long producerIndex;
- long consumerIndex;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
- rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
- rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
-
-#rxandroid
--dontwarn sun.misc.**
--keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
-   long producerIndex;
-   long consumerIndex;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
-
-#glide
--keep public class * implements com.bumptech.glide.module.GlideModule
--keep public class * extends com.bumptech.glide.AppGlideModule
--keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
-}
 #agentweb
 -keep class com.just.agentweb.** {
     *;
@@ -186,9 +154,3 @@ public static java.lang.String TABLENAME;
 -dontwarn com.just.agentweb.**
 -keepclassmembers class com.just.agentweb.sample.common.AndroidInterface{ *; }
 
-#AVLoading
--keep class com.wang.avi.** { *; }
--keep class com.wang.avi.indicators.** { *; }
-
--keep class com.hjq.toast.** {*;}
--keep class com.xuexiang.xui.widget.edittext.materialedittext.** { *; }

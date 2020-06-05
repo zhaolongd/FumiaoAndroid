@@ -37,14 +37,12 @@ public abstract class CoreActivity extends AppCompatActivity {
         if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
-//        ActivityStackManager.getInstance().onCreated(this);
         AppManager.getAppManager().addActivity(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        ActivityStackManager.getInstance().onDestroyed(this);
         AppManager.getAppManager().removeActivity(this);
     }
 
@@ -83,6 +81,8 @@ public abstract class CoreActivity extends AppCompatActivity {
     public void onResult(Object data) {
     }
 
+    public abstract void toLogin();
+
     public abstract void showLoad();
 
     public abstract void hintLoad();
@@ -106,10 +106,4 @@ public abstract class CoreActivity extends AppCompatActivity {
         mStatusManager.hideLayout();
     }
 
-    /**
-     * 无网络显示错误提示
-     */
-    public void showError() {
-        mStatusManager.showError(getContentView());
-    }
 }

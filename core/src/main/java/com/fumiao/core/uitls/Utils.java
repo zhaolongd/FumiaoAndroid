@@ -3,7 +3,6 @@ package com.fumiao.core.uitls;
 import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
-import android.widget.EditText;
 
 import java.util.List;
 
@@ -85,17 +84,4 @@ public class Utils {
         return false;
     }
 
-    /**
-     * 验证身份证号是否符合规则
-     * @param IDCard 身份证号
-     * @return
-     */
-    // 判断是否符合身份证号码的规范
-    public static boolean isIDCard(String IDCard) {
-        if (IDCard != null) {
-            String IDCardRegex = "(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x|Y|y)$)";
-            return IDCard.matches(IDCardRegex);
-        }
-        return false;
-    }
 }

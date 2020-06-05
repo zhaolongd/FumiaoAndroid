@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/ContentStyle"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+        <TextView
+            android:id="@+id/tv_payment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_des"
+            android:layout_gravity="center_horizontal"
+            android:text="实收金额（元）"/>
+
+        <TextView
+            android:id="@+id/tv_real_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_large"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/font_content"
+            android:layout_gravity="center_horizontal"
+            android:text="160"/>
+        <TextView
+            android:id="@+id/tv_refund"
+            android:visibility="gone"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/color_theme"
+            android:background="@drawable/round_them_bg"
+            android:layout_gravity="center_horizontal"
+            android:text="有退款"/>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des="收款成功"
+            app:text="交易状态"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des="160"
+            app:text="交易金额"></com.fumiao.core.widget.ItemArrowLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ContentStyle"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="收款时间"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_payment_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="付款方式"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_payment_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="付款人"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_store_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="交易门店"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/order_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="收款流水号"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/other_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text="福喵单号"></com.fumiao.core.widget.ItemArrowLayout>
+
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/out_transaction_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:arrow_visibility="false"
+            app:des=""
+            app:text=""></com.fumiao.core.widget.ItemArrowLayout>
+        <LinearLayout
+            android:id="@+id/balance_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/font_content2"
+                android:textSize="@dimen/font_content"
+                android:text="结算金额"/>
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/font_des"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="@dimen/font_small" />
+            <ImageView
+                android:id="@+id/balance_arrow"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_arrow_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/poundage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/balance_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/font_content2"
+                android:textSize="@dimen/font_content" />
+            <TextView
+                android:id="@+id/balance_poundage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/font_des"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="@dimen/font_small" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/ContentStyle"
+        android:id="@+id/refund_layout"
+        android:layout_marginTop="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/refund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_content"
+            android:textStyle="bold"
+            android:text="退款"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/refund_recy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</LinearLayout>

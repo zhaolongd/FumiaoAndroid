@@ -1,0 +1,119 @@
+{
+  "status": true,
+  "code": 1,
+  "msg": "",
+  "data": {
+    "payment_list": {
+      "total": 10,
+      "per_page": 100,
+      "current_page": 1,
+      "last_page": 1,
+      "data": [
+        {
+          "id": 222,
+          "pay_orderid": "20180904160130027567",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1536048115,
+          "paytype_name": null,
+          "paytype_icon": null,
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 220,
+          "pay_orderid": "20180904150318064797",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1536044604,
+          "paytype_name": null,
+          "paytype_icon": null,
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 219,
+          "pay_orderid": "20180904150211437136",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1536044542,
+          "paytype_name": null,
+          "paytype_icon": null,
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 215,
+          "pay_orderid": "20180903190041640442",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1535972447,
+          "paytype_name": "微信扫码",
+          "paytype_icon": "/static/common/paytype/weixin_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 214,
+          "pay_orderid": "20180903185950443634",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1535972403,
+          "paytype_name": "支付宝扫码",
+          "paytype_icon": "/static/common/paytype/ali_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 207,
+          "pay_orderid": "20180903185409424433",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1535972060,
+          "paytype_name": "百度钱包",
+          "paytype_icon": "/static/common/paytype/baidu_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 206,
+          "pay_orderid": "20180903185234749716",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1535971969,
+          "paytype_name": "微信扫码",
+          "paytype_icon": "/static/common/paytype/weixin_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 205,
+          "pay_orderid": "20180903183902681921",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1535971171,
+          "paytype_name": "微信H5",
+          "paytype_icon": "/static/common/paytype/weixin_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 202,
+          "pay_orderid": "20180903162725473942",
+          "pay_amount": "0.0100",
+          "pay_successdate": 1535963262,
+          "paytype_name": "支付宝H5",
+          "paytype_icon": "/static/common/paytype/ali_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        },
+        {
+          "id": 200,
+          "pay_orderid": "20180903154609677872",
+          "pay_amount": "0.0300",
+          "pay_successdate": 1535962743,
+          "paytype_name": "支付宝H5",
+          "paytype_icon": "/static/common/paytype/ali_ico.png",
+          "cashier_name": "简单爱",
+          "store_name": "店铺名称"
+        }
+      ]
+    },
+    "statistic": {
+      "order_money_sum": 0.12,
+      "order_count": 10
+    }
+  }
+}

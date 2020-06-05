@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.fumiao.assistant">
+    package="com.fumiao.pay">
 
     <application
+        android:name="com.fumiao.pay.app.BaseApp"
         tools:replace="android:allowBackup"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.fumiao.assistant.app.BaseApp"
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
-
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name="com.fumiao.pay.ui.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:alwaysRetainTaskState="true">
             <intent-filter>
@@ -22,113 +21,122 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
+        <activity android:name="com.fumiao.pay.ui.activity.MainActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
-        <activity android:name=".ui.activity.LoginActivity"
+        <activity
+            android:name="com.fumiao.pay.ui.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
-        <activity android:name=".ui.activity.home.MerchantInComingActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.MerchantRegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.MicroMerchantInfoActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.MicroMerchantAuthenticationActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.MerchantAuditActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
-        <activity android:name=".ui.activity.me.ChangePasswordActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.me.DownloadActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.me.PersonMessageActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.MerchantDetailsActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.SelectOpeningBankActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.SelectBankProvinceActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.SelectBankCityActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.SelectBankBranchActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.StoreTypeActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.InComingDraftActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.InComingResultActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.NormalMerchantInComingActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.NormalMerchantBusinessActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.NormalMerchantActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.NormalMerchantSettlementActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.NormalMerchantRateActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.NormalMerchantTypeActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.WebViewActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.me.AboutActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.DeviceListActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.DeviceDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.home.SuccessActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.StoreDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.StoreListActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.StoreAddActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.StoreDeviceListActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.DeviceAddActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.AddSuccessActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.merchant.ScanQrCodeActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.data.TeamTransactionsActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.data.PersonnelTransactionsActiviy"
-            android:screenOrientation="portrait" />
         <activity
-            android:name="com.tencent.bugly.beta.ui.BetaActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale"
-            android:theme="@android:style/Theme.Translucent" />
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.fileProvider"
+            android:name="com.fumiao.pay.ui.activity.store.StoreAddActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.fumiao.pay.ui.activity.FindPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.SettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.StoreSettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.ChangePasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.StoreTypeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.home.CollectMoneyActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.StoreManageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.MemberManageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.MemberAddActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.MemberDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.CashierActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.CashierAddActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.CashierDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.home.ScanQrCodeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.home.ReconciliationsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.home.OrderDetailsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.home.OrderRefundActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.home.OrderRefundDetailsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.SelectDayReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.SelectMonthReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.SelectWeekReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.BillReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.ReconciliationScreenActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.ReconciliationsResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fumiao.pay.ui.activity.home.PaySuccessActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.ChangePhoneActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.msg.StationInformActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.GuideActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".widget.WebActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.me.AboutActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.store.SelectStoreActivity"
+            android:screenOrientation="portrait"/>
+        <service android:name="com.fumiao.pay.jpush.XService"
+            android:enabled="true"
             android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
-        </provider>
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.fumiao.pay.jpush.PushReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="com.fumiao.pay" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+
+    <!-- 极光推送Required -->
+    <permission
+        android:name="com.fumiao.pay.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="com.fumiao.pay.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
 </manifest>

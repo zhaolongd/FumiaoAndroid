@@ -1,18 +1,16 @@
 package com.fumiao.core.app;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import com.fumiao.core.uitls.StatusManager;
+
+import com.fumiao.core.uitls.SPUtil;
 
 /**
  * Created by chee on 2018/8/27.
  */
 public class CoreFragment extends Fragment {
 
-
-    private final StatusManager mStatusManager = new StatusManager();
 
     public void jumpActivity(Class clazz) {
         jumpActivity(clazz, null);
@@ -43,25 +41,6 @@ public class CoreFragment extends Fragment {
             intent.putExtras(bundle);
         }
         startActivityForResult(intent, code);
-    }
-
-
-    /**
-     * 无数据显示空提示
-     */
-    public void showEmpty(Drawable drawable, CharSequence hint) {
-        mStatusManager.showEmpty(getView(), drawable,hint);
-    }
-
-    public void hideEmpty() {
-        mStatusManager.hideLayout();
-    }
-
-    /**
-     * 无网络显示错误提示
-     */
-    public void showError() {
-        mStatusManager.showError(getView());
     }
 
 }

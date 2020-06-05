@@ -1,19 +1,18 @@
 <resources>
 
     <!-- Base application theme. -->
-<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
-<!--    XUITheme.Phone-->
-    <style name="AppTheme" parent="XUITheme.Phone">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/white</item>
-        <item name="android:editTextStyle">@style/EditTextBase</item>
-        <item name="editTextStyle">@style/EditTextBase</item>
     </style>
 
-    <style name="EditTextBase" parent="android:Widget.Holo.Light.EditText"/>
+    <style name="EditText">
+        <item name="colorControlNormal">@color/line</item>
+        <item name="colorControlActivated">@color/color_theme</item>
+    </style>
 
     <style name="main_btn">
         <item name="android:layout_marginTop">3dp</item>
@@ -36,6 +35,36 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+    <style name="ed_defult">
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">24</item>
+    </style>
+
+    <style name="home_top_img">
+        <item name="android:layout_height">43dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="home_top_tv">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/font_content</item>
+    </style>
+
+    <style name="home_content_style">
+        <item name="android:background">@drawable/home_content_bg</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/content_margin</item>
+        <item name="android:layout_marginLeft">@dimen/content_margin</item>
+    </style>
+
     <style name="ContentStyle">
         <item name="android:background">@color/white</item>
         <item name="android:gravity">center_vertical</item>
@@ -54,7 +83,4 @@
         <item name="android:paddingBottom">13dp</item>
     </style>
 
-    <style name="EditText">
-        <item name="colorControlNormal">@color/line</item>
-    </style>
 </resources>

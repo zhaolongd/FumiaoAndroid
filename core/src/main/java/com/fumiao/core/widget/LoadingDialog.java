@@ -7,6 +7,9 @@ import com.fumiao.core.R;
 import com.wang.avi.AVLoadingIndicatorView;
 
 
+/**
+ * Created by chee on 2018/6/4.
+ */
 public class LoadingDialog extends Dialog {
 
     public LoadingDialog( Context context) {

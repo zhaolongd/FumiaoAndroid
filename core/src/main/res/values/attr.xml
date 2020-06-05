@@ -34,7 +34,6 @@
         <attr name="digits" format="string"></attr>
         <attr name="key_width" format="dimension"></attr>
         <attr name="is_password" format="boolean"></attr>
-        <attr name="is_decimal_number" format="boolean"></attr>
         <attr name="is_show" format="boolean"></attr>
         <attr name="is_number" format="boolean"></attr>
         <attr name="ed_focusable" format="boolean"></attr>

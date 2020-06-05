@@ -49,7 +49,6 @@ public class KeyEditText extends LinearLayout {
         boolean is_show =  typedArray.getBoolean(R.styleable.OilEditText_is_show, false);//是否显示密碼
         boolean ed_focusable = typedArray.getBoolean(R.styleable.OilEditText_ed_focusable, true);
         boolean is_number = typedArray.getBoolean(R.styleable.OilEditText_is_number, false);
-        boolean is_decimal_number = typedArray.getBoolean(R.styleable.OilEditText_is_decimal_number, false);
         float key_width = typedArray.getDimension(R.styleable.OilEditText_key_width, 0);
 
 
@@ -67,12 +66,6 @@ public class KeyEditText extends LinearLayout {
         }
         if (is_number) {
             textEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
-        }
-        /**
-         * 可以带小数点的浮点格式
-         */
-        if(is_decimal_number){
-            textEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
         }
 
         if (key_width != 0) {

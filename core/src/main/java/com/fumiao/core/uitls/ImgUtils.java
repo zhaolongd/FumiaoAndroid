@@ -5,28 +5,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by chee on 2018/9/22.
  */
 public class ImgUtils {
-
-    private static String TAG = "ImgUtils";
 
     /**
      * 保存文件到指定路径
@@ -106,151 +98,4 @@ public class ImgUtils {
         }
         return file.getPath();
     }
-
-    /**
-     * 从指定的图像路径获取位图
-     *
-     * @param imgpath
-     * @return
-     */
-    public Bitmap getBitmap(String imgpath) {
-        // get bitmap through image path
-        BitmapFactory.Options newopts = new BitmapFactory.Options();
-        newopts.inJustDecodeBounds = false;
-        newopts.inPurgeable = true;
-        newopts.inInputShareable = true;
-        // do not compress
-        newopts.inSampleSize = 1;
-        newopts.inPreferredConfig = Bitmap.Config.RGB_565;
-        return BitmapFactory.decodeFile(imgpath, newopts);
-    }
-
-    /**
-     * 压缩图片（质量压缩）
-     *
-     * @param bitmap
-     */
-    public static File compressImage(Bitmap bitmap) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);// 质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
-        int options = 100;
-        while (baos.toByteArray().length / 1024 > 500) { // 循环判断如果压缩后图片是否大于500kb,大于继续压缩
-            baos.reset();// 重置baos即清空baos
-            options -= 10;// 每次都减少10
-            bitmap.compress(Bitmap.CompressFormat.PNG, options, baos);// 这里压缩options%，把压缩后的数据存放到baos中
-            long length = baos.toByteArray().length;
-        }
-//        SimpleDateFormat format = new SimpleDateFormat("yyyymmddhhmmss");
-//        Date date = new Date(System.currentTimeMillis());
-//        String filename = format.format(date);
-//        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "fumiao", filename + ".png");
-        String storePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "fumiao";
-        File appDir = new File(storePath);
-        if (!appDir.exists()) {
-            appDir.mkdir();
-        }
-        String fileName = System.currentTimeMillis() + ".png";
-        File file = new File(appDir, fileName);
-        try {
-            FileOutputStream fos = new FileOutputStream(file);
-            try {
-                fos.write(baos.toByteArray());
-                fos.flush();
-                fos.close();
-            } catch (IOException e) {
-
-                e.printStackTrace();
-            }
-        } catch (FileNotFoundException e) {
-
-            e.printStackTrace();
-        }
-        recyclebitmap(bitmap);
-        return file;
-    }
-
-    /**
-     * 压缩图片（质量压缩）
-     *
-     * @param imgpath
-     */
-    public static String compressImage(String imgpath, int ImageSize) {
-        int subtract;
-        Bitmap bitmap;
-        BitmapFactory.Options newopts = new BitmapFactory.Options();
-        newopts.inJustDecodeBounds = false;
-        newopts.inPurgeable = true;
-        newopts.inInputShareable = true;
-        // do not compress
-        newopts.inSampleSize = 1;
-        newopts.inPreferredConfig = Bitmap.Config.RGB_565;
-        bitmap = BitmapFactory.decodeFile(imgpath, newopts);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);// 质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
-        int options = 100;
-        Log.i(TAG, "图片分辨率压缩后:"+ baos.toByteArray().length / 1024 + "KB");
-        while (baos.toByteArray().length > ImageSize * 1024) {  //循环判断如果压缩后图片是否大于ImageSize kb,大于继续压缩
-            subtract = setSubstractSize(baos.toByteArray().length / 1024);
-            baos.reset();// 重置baos即清空baos
-            options -= subtract;//每次都减少10
-            bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);// 这里压缩options%，把压缩后的数据存放到baos中
-            Log.i(TAG, "图片压缩后：" + baos.toByteArray().length / 1024 + "KB");
-        }
-        Log.i(TAG, "图片处理完成!" + baos.toByteArray().length / 1024 + "KB");
-        String storePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "fumiao";
-        File appDir = new File(storePath);
-        if (!appDir.exists()) {
-            appDir.mkdir();
-        }
-        String fileName = System.currentTimeMillis() + ".jpg";
-        File file = new File(appDir, fileName);
-        try {
-            FileOutputStream fos = new FileOutputStream(file);
-            try {
-                fos.write(baos.toByteArray());
-                fos.flush();
-                fos.close();
-            } catch (IOException e) {
-
-                e.printStackTrace();
-            }
-        } catch (FileNotFoundException e) {
-
-            e.printStackTrace();
-        }
-        recyclebitmap(bitmap);
-        return file.getPath();
-    }
-
-    /**
-     * 根据图片的大小设置压缩的比例，提高速度
-     *
-     * @param imageMB
-     * @return
-     */
-    private static int setSubstractSize(int imageMB) {
-
-        if (imageMB > 1000) {
-            return 60;
-        } else if (imageMB > 750) {
-            return 40;
-        } else if (imageMB > 500) {
-            return 20;
-        } else {
-            return 10;
-        }
-    }
-
-
-    public static void recyclebitmap(Bitmap... bitmaps) {
-        if (bitmaps == null) {
-            return;
-        }
-        for (Bitmap bm : bitmaps) {
-            if (null != bm && !bm.isRecycled()) {
-                bm.recycle();
-            }
-        }
-    }
-
 }

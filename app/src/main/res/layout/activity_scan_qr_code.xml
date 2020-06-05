@@ -29,4 +29,28 @@
         app:qrcv_scanLineColor="@color/colorPrimaryDark"
         app:qrcv_toolbarHeight="56dp"
         app:qrcv_topOffset="80dp" />
+
+    <LinearLayout
+        android:id="@+id/order_money_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/white"
+            android:text="应收金额"/>
+        <TextView
+            android:id="@+id/order_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/white" />
+    </LinearLayout>
 </RelativeLayout>

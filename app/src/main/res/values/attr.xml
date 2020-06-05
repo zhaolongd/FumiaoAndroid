@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="text" format="string" />
+    <attr name="icon" format="reference"></attr>
+
+    <declare-styleable name="theme_btn">
+        <attr name="btn_text" format="string"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="ClearEditText">
+        <attr name="text" />
+        <attr name="hint" format="string"></attr>
+        <attr name="digits" format="string"></attr>
+        <attr name="key_width" format="dimension"></attr>
+        <attr name="is_password" format="boolean"></attr>
+        <attr name="is_number" format="boolean"></attr>
+        <attr name="ed_focusable" format="boolean"></attr>
+        <attr name="is_clear" format="boolean"></attr>
+        <attr name="image_src" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference"/>
+        <attr name="mvAnimDuration" format="integer|reference"/>
+        <attr name="mvTextSize" format="dimension|reference"/>
+        <attr name="mvTextColor" format="color|reference"/>
+        <attr name="mvSingleLine" format="boolean"/>
+        <attr name="mvFont" format="reference"/>
+        <attr name="mvGravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="mvDirection">
+            <enum name="bottom_to_top" value="0"/>
+            <enum name="top_to_bottom" value="1"/>
+            <enum name="right_to_left" value="2"/>
+            <enum name="left_to_right" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

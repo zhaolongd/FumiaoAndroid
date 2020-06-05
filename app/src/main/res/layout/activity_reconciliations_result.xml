@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="15dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_content"
+            android:text="筛选结果"/>
+
+        <TextView
+            android:id="@+id/tv_order_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tv_order_count"
+            android:layout_marginRight="30dp"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_content"
+            android:text="总计0元"/>
+        <TextView
+            android:id="@+id/tv_order_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="0笔"/>
+    </RelativeLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refresh_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlAccentColor="#00000000"
+        app:srlPrimaryColor="#00000000"
+        android:layout_marginTop="10dp"
+        app:srlEnablePreviewInEditMode="true">
+        <com.fumiao.core.widget.MyRefreshHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/reconciliations_rcy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+           <TextView
+               android:id="@+id/tv_empty"
+               android:visibility="gone"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:background="@color/white"
+               android:gravity="center"
+               android:textSize="@dimen/font_content"
+               android:textColor="@color/font_content"
+               android:text="无筛选结果"/>
+        </RelativeLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

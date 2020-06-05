@@ -14,12 +14,11 @@ public class AESUtils {
 
 
     // 加密
-    public static String encrypt(String sSrc){
+    public static String encrypt(String sSrc, String key){
         try {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-//            String secretKey = MD5Utils.getMD5(AES_KEY).substring(8, 24);
-//            SecretKeySpec skeySpec = new SecretKeySpec(secretKey.getBytes("UTF-8"), "AES");
-            SecretKeySpec skeySpec = new SecretKeySpec(AES_KEY.getBytes("UTF-8"), "AES");
+            String secretKey = MD5Utils.getMD5(key).substring(8, 24);
+            SecretKeySpec skeySpec = new SecretKeySpec(secretKey.getBytes("UTF-8"), "AES");
             IvParameterSpec iv = new IvParameterSpec(ivParameter.getBytes());// 使用CBC模式，需要一个向量iv，可增加加密算法的强度
             cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
             byte[] encrypted = cipher.doFinal(sSrc.getBytes("utf-8"));

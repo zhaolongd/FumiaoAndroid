@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="145dp"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_device_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/tv_store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/font_content"
+            android:textColor="@color/font_content"
+            android:text="西子王厨"/>
+
+        <ImageView
+            android:id="@+id/iv_device_bg"
+            android:layout_width="48dp"
+            android:layout_height="71dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/cashier_bg"/>
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/font_content"
+            android:layout_below="@+id/tv_store_name"
+            android:textColor="@color/font_des"
+            android:text="编号：000111444444444" />
+
+        <TextView
+            android:id="@+id/tv_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/font_content"
+            android:layout_below="@+id/tv_no"
+            android:textColor="@color/font_des"
+            android:text="所属门店：南昌西子王厨" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_look_cashier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/rl_device_info"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity = "center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@mipmap/ic_save"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_theme"
+                android:textSize="@dimen/font_content"
+                android:layout_marginLeft="10dp"
+                android:text="查看收款码"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

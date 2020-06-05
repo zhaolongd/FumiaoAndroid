@@ -26,6 +26,7 @@ public class JsonConvert<T> implements Converter<T> {
     private Type type;
     public static int SUCCESS = 1;
     public static int LOGIN = 20004; //请求超时
+    public static int LOGIN1 = 20001; //多点登录错误
 
 
     public JsonConvert(Class<T> clazz) {
@@ -106,7 +107,11 @@ public class JsonConvert<T> implements Converter<T> {
         BaseResponse baseData = Convert.fromJson(responseJson, BaseResponse.class);
         if (baseData.code != SUCCESS) {
             response.close();
-            throw new IllegalStateException(baseData.msg);
+            if (baseData.code == LOGIN1) {
+                throw new IllegalStateException("登陆失效");
+            } else {
+                throw new IllegalStateException(baseData.msg);
+            }
         }
 
         Type rawType = type.getRawType();                     // 泛型的实际类型
@@ -133,7 +138,9 @@ public class JsonConvert<T> implements Converter<T> {
                 if (code == SUCCESS) {
                     //noinspection unchecked
                     return (T) lzyResponse;
-                }else {
+                } else if (baseData.code == LOGIN1) {
+                    throw new IllegalStateException("登陆失效");
+                } else {
                     //直接将服务端的错误信息抛出，onError中可以获取
                     throw new IllegalStateException("错误代码：" + code + "，错误信息：" + lzyResponse.msg);
                 }

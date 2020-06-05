@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/app_bg"
     android:paddingTop="60dp"
     android:paddingBottom="150dp"
     tools:context=".app.CoreActivity">
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/iv_hint_icon"
         android:layout_width="180dp"
         android:layout_height="158dp" />

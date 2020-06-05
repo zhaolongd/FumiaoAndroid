@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <FrameLayout
@@ -17,50 +16,56 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/btn_home"
+                style="@style/main_layout"
+                android:onClick="onMenuClicks"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/main_icon"
+                    android:background="@drawable/btn_home" />
+
+                <TextView
+                    style="@style/main_btn"
+                    android:text="@string/home" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_home_top"
+                style="@style/main_layout"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <ImageView
+                    style="@style/main_icon"
+                    android:background="@mipmap/ic_back_to_top" />
+                <TextView
+                    style="@style/main_btn"
+                    android:text="@string/back_to_top"
+                    android:textColor="@color/colorAccent"/>
+            </LinearLayout>
+        </FrameLayout>
+
         <LinearLayout
-            android:id="@+id/btn_home"
+            android:id="@+id/btn_msg"
             style="@style/main_layout"
             android:onClick="onMenuClicks"
             android:orientation="vertical">
 
             <ImageView
                 style="@style/main_icon"
-                android:background="@drawable/btn_home" />
+                android:background="@drawable/btn_msg" />
 
             <TextView
                 style="@style/main_btn"
-                android:text="@string/home" />
+                android:text="@string/msg" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/btn_merchant"
-            style="@style/main_layout"
-            android:onClick="onMenuClicks"
-            android:orientation="vertical">
-
-            <ImageView
-                style="@style/main_icon"
-                android:background="@drawable/btn_merchant" />
-
-            <TextView
-                style="@style/main_btn"
-                android:text="@string/merchant" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_data"
-            style="@style/main_layout"
-            android:onClick="onMenuClicks"
-            android:orientation="vertical">
-
-            <ImageView
-                style="@style/main_icon"
-                android:background="@drawable/btn_data" />
-
-            <TextView
-                style="@style/main_btn"
-                android:text="@string/data" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/btn_me"
@@ -75,7 +80,10 @@
             <TextView
                 style="@style/main_btn"
                 android:text="@string/me" />
+
         </LinearLayout>
+
     </LinearLayout>
+
 
 </LinearLayout>

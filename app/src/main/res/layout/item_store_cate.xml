@@ -17,7 +17,7 @@
         android:singleLine="true"
         android:ellipsize="end"
         android:text="意大利面"
-        android:textColor="@color/orange"
+        android:textColor="@color/color_theme"
         android:textSize="@dimen/font_content" />
 
 </RelativeLayout>

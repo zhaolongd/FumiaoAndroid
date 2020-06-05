@@ -18,7 +18,7 @@
         android:text="美食"
         android:textSize="@dimen/font_title"/>
 
-    <com.fumiao.assistant.widget.DragPointView
+    <com.fumiao.pay.widget.DragPointView
         android:id="@+id/type_point"
         android:layout_width="15dp"
         android:layout_height="15dp"

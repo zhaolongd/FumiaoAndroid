@@ -10,10 +10,7 @@ import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.fumiao.core.R;
 import com.fumiao.core.widget.HintLayout;
-
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 
 /**
@@ -38,14 +35,14 @@ public final class StatusManager {
     /**
      * 显示错误提示
      */
-    public void showError(View view) {
+   /* public void showError(View view) {
         // 判断当前网络是否可用
         if (isNetworkAvailable(view.getContext())) {
             showLayout(view, R.drawable.icon_hint_request, R.string.listview_header_hint_normal);
         } else {
             showLayout(view, R.drawable.icon_hint_nerwork, R.string.hint_layout_error_network);
         }
-    }
+    }*/
 
     /**
      * 显示自定义提示

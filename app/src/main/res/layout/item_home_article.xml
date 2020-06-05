@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/article_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_article"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/font_title"
+        android:textSize="@dimen/font_title"
+        android:text="服装店"/>
+
+    <TextView
+        android:id="@+id/article_type"
+        android:layout_below="@+id/article_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/font_des"
+        android:textSize="@dimen/font_content"
+        android:text="福喵生意圈" />
+    
+    <ImageView
+        android:id="@+id/iv_article"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

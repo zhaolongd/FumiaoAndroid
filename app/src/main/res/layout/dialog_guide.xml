@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_guide_bg"
+        android:layout_width="match_parent"
+        android:layout_height="340dp" />
+    
+    <Button
+        android:id="@+id/btn_comfirm"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/font_btn"
+        android:textColor="@color/white"
+        android:background="@drawable/round_orange_bg"/>
+
+</FrameLayout>

@@ -2,7 +2,6 @@ package com.fumiao.core.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.Spanned;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -47,11 +46,6 @@ public class CoreViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setText(int id, String text) {
-        TextView tx = (TextView) convertView.findViewById(id);
-        tx.setText(text);
-    }
-
-    public void setText(int id, Spanned text) {
         TextView tx = (TextView) convertView.findViewById(id);
         tx.setText(text);
     }

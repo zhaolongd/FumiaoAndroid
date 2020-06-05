@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/report_chart_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:visibility="gone">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_title"
+            android:textColor="#505050"
+            android:text="收入趋势"/>
+        <TextView
+            android:id="@+id/high_amount_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6B6B6B"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/font_content"
+            android:text="07月12日收入最高的时间是"/>
+
+        <TextView
+            android:id="@+id/high_amount_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#505050"
+            android:text="1点-3点 1106元"/>
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/trendBarChart"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </com.github.mikephil.charting.charts.BarChart>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_title"
+            android:textColor="#505050"
+            android:text="收入对比"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/amount_compare_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#6B6B6B"
+                android:textSize="@dimen/font_content"
+                android:text="07月11日比7月10日减少"/>
+            <ImageView
+                android:id="@+id/compare_arrow"
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_increase"/>
+            <TextView
+                android:id="@+id/compare_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#6B6B6B"
+                android:textSize="@dimen/font_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/compareBarChart"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </com.github.mikephil.charting.charts.BarChart>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_title"
+            android:textColor="#505050"
+            android:text="收款方式分析"/>
+
+        <com.fumiao.pay.widget.PieChart
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:id="@+id/pieChartView"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"/>
+    </LinearLayout>
+
+</LinearLayout>

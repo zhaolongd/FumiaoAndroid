@@ -23,7 +23,7 @@
         android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:text="主题"
-        android:textColor="@color/font_key"
+        android:textColor="@color/font_content2"
         android:textSize="@dimen/font_content" />
 
     <TextView

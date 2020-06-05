@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        style="@style/ContentStyle"
+        android:divider="@drawable/line"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        android:showDividers="middle">
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/btn_store_msg"
+            android:visibility="gone"
+            style="@style/MeItem"
+            app:des="13970331469"
+            app:text="@string/store_msg"/>
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/btn_change_phone"
+            style="@style/MeItem"
+            app:text="@string/change_phone"/>
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/btn_change_pwd"
+            style="@style/MeItem"
+            app:text="@string/change_password"/>
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/btn_change_manager_pwd"
+            style="@style/MeItem"
+            app:text="@string/change_manager_password"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/ContentStyle"
+        android:divider="@drawable/line"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:showDividers="middle">
+        <LinearLayout
+            android:id="@+id/switch_pay_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            style="@style/MeItem"
+            android:text="@string/pay_switch"
+            android:layout_weight="1"
+            android:textColor="@color/font_content"
+            android:textSize="@dimen/font_content"
+            android:layout_width="0dp" />
+        <Switch
+            android:id="@+id/switch_pay"
+            style="@style/MeItem"
+            android:thumb="@drawable/swtich_thumb"
+            android:track="@drawable/swtich_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/MeItem"
+                android:text="@string/voice_switch"
+                android:layout_weight="1"
+                android:textColor="@color/font_content"
+                android:textSize="@dimen/font_content" />
+
+            <Switch
+                android:id="@+id/switch_voice"
+                android:thumb="@drawable/swtich_thumb"
+                android:track="@drawable/swtich_track"
+                style="@style/MeItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/MeItem"
+                android:text="@string/notif_switch"
+                android:layout_weight="1"
+                android:textColor="@color/font_content"
+                android:textSize="@dimen/font_content" />
+
+            <Switch
+                android:id="@+id/switch_notice"
+                style="@style/MeItem"
+                android:thumb="@drawable/swtich_thumb"
+                android:track="@drawable/swtich_track"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.fumiao.core.widget.ItemArrowLayout
+            android:id="@+id/btn_about_version"
+            style="@style/MeItem"
+            android:layout_marginTop="5dp"
+            app:arrow_visibility="false"
+            android:background="#ffffff"
+            app:des="版本"
+            app:text="@string/about_app"/>
+    </LinearLayout>
+    <com.fumiao.core.widget.ItemArrowLayout
+        android:id="@+id/btn_clear_app"
+        style="@style/MeItem"
+        android:layout_marginTop="5dp"
+        app:arrow_visibility="false"
+        android:background="#ffffff"
+        app:des="66.66KB"
+        app:text="@string/clear_cache"/>
+
+
+    <Button
+        android:id="@+id/login_out"
+        android:text="退出登录"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/btn_press_bg"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_btn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="19dp"/>
+
+</LinearLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:padding="15dp"
+            android:src="@mipmap/ic_black_back" />
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/font_title_black"
+                android:textSize="@dimen/font_title" />
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_title"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_arrow_down2" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/day_bill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/day_report_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="日报" />
+
+            <TextView
+                android:id="@+id/day_report_line"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_theme" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/week_bill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/week_report_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="周报" />
+
+            <TextView
+                android:id="@+id/week_report_line"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_theme" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/month_bill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/month_report_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="月报" />
+
+            <TextView
+                android:id="@+id/month_report_line"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_theme" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <FrameLayout
+        android:id="@+id/bill_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

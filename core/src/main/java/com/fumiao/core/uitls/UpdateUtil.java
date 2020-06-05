@@ -79,7 +79,7 @@ public class UpdateUtil {
                         dialog_cancel.setOnTouchListener(new View.OnTouchListener() {
                             @Override
                             public boolean onTouch(View v, MotionEvent event) {
-                                if (event.getAction() == MotionEvent.ACTION_UP) {
+                                    if (event.getAction() == MotionEvent.ACTION_UP) {
                                     SPUtil.getInstance().putString(LAST_VERSIOIN, updataBean.getLast_versioin());
                                     callback.onSuccess("取消");
                                 }
@@ -89,14 +89,15 @@ public class UpdateUtil {
                         return updataDialog;
                     }
                 })
-                .setForceUpdateListener(new ForceUpdateListener() {
-                    @Override
-                    public void onShouldForceUpdate() {
-                        if (updataBean.isIs_force()) {
-                            AppManager.getAppManager().closeApp();
-                        }
-                    }
-                })
+                .setForceRedownload(true) //如果本地有安装包缓存也会重新下载apk
+//                .setForceUpdateListener(new ForceUpdateListener() {
+//                    @Override
+//                    public void onShouldForceUpdate() {
+//                        if (updataBean.isIs_force()) {
+//                            AppManager.getAppManager().closeApp();
+//                        }
+//                    }
+//                })
                 .executeMission(context);
     }
 

@@ -1,0 +1,79 @@
+[
+  {
+    "title": "管理门店",
+    "img_rid": "ic_manager_store",
+    "funtionId": 101,
+    "sort": 0,
+    "is_show": true,
+    "clerk_show": false,
+    "function_links": "com.fumiao.pay.ui.activity.store.StoreSettingActivity"
+  },
+  {
+    "title": "管理店员",
+    "img_rid": "ic_manager_menber",
+    "funtionId": 106,
+    "sort": 1,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.ReconciliationsActivity"
+  },
+  {
+    "title": "收银台",
+    "img_rid": "ic_cashier",
+    "funtionId":107,
+    "sort": 2,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.CashierActivity"
+  },
+  {
+    "title": "月度报表",
+    "img_rid": "ic_month_report",
+    "funtionId": 108,
+    "sort": 3,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.BillAnalysisActivity"
+  },
+
+  {
+    "title": "收款流水",
+    "img_rid": "ic_cash_flow",
+    "funtionId": 108,
+    "sort": 4,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.BillAnalysisActivity"
+  },
+
+  {
+    "title": "红包营销",
+    "img_rid": "ic_red_envelopes_marketing",
+    "funtionId": 108,
+    "sort": 5,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.BillAnalysisActivity"
+  },
+
+  {
+    "title": "扫码点单",
+    "img_rid": "ic_scanning_order",
+    "funtionId": 108,
+    "sort": 6,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.BillAnalysisActivity"
+  },
+
+  {
+    "title": "更多",
+    "img_rid": "ic_more",
+    "funtionId": 108,
+    "sort": 7,
+    "is_show": true,
+    "clerk_show": true,
+    "function_links": "com.fumiao.pay.ui.activity.home.BillAnalysisActivity"
+  }
+
+]

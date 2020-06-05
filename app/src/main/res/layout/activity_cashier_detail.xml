@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg">
+    
+    <FrameLayout
+        android:id="@+id/qr_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:background="@color/white">
+        
+        <ImageView
+            android:layout_width="337dp"
+            android:layout_height="481dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/cashier_qrcode_bg"/>
+
+        <ImageView
+            android:id="@+id/qr_code"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"/>
+        <TextView
+            android:id="@+id/store_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_content"/>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:text="保存至相册"
+        android:textColor="@color/white"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/btn_press_bg"
+        android:layout_gravity="center"
+        android:textSize="@dimen/font_title" />
+
+    
+
+
+</LinearLayout>

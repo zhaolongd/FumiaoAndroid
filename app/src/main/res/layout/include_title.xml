@@ -29,7 +29,7 @@
             android:maxLines="1"
             android:padding="12dp"
             android:text="@string/app_name"
-            android:textColor="@color/font_title"
+            android:textColor="@color/font_title_black"
             android:textSize="@dimen/font_title" />
 
         <FrameLayout
@@ -44,16 +44,18 @@
                 android:layout_height="match_parent"
                 android:padding="12dp"
                 android:visibility="invisible" />
+
             <TextView
                 android:id="@+id/base_right_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:padding="15dp"
+                android:padding="14dp"
                 android:text="右键"
-                android:textColor="@color/font_title"
+                android:textColor="@color/font_title_black"
                 android:textSize="@dimen/font_content"
                 android:visibility="invisible" />
+
         </FrameLayout>
     </RelativeLayout>
 

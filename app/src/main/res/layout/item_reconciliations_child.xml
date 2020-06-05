@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_bg">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textColor="@color/font_des"
+        android:textSize="@dimen/font_content"
+        android:text="无交易记录"/>
+    <RelativeLayout
+        android:id="@+id/item_order"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/iv_type"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_type"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:text="收款"
+            android:textColor="@color/font_content"
+            android:textSize="@dimen/font_content" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_state"
+            android:layout_marginLeft="5dp"
+            android:text="13:15:20"
+            android:textColor="@color/font_content"
+            android:textSize="@dimen/font_content" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="200.00元"
+            android:textColor="@color/font_content"
+            android:textSize="@dimen/font_title" />
+
+        <TextView
+            android:id="@+id/tv_store_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_state"
+            android:layout_marginLeft="5dp"
+            android:text="知宇海鲜档口"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/font_des"
+            android:textSize="@dimen/font_content" />
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_foot"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textColor="@color/font_des"
+        android:textSize="@dimen/font_content"
+        android:text="报告老板，以上是今日全部交易记录"/>
+</LinearLayout>

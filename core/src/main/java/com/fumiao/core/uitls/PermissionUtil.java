@@ -1,6 +1,7 @@
 package com.fumiao.core.uitls;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.tbruyelle.rxpermissions2.Permission;
 import com.fumiao.core.R;
@@ -30,7 +31,7 @@ public class PermissionUtil {
         } else if (permission.shouldShowRequestPermissionRationale) {
             // 用户拒绝了该权限，没有选中『不再询问』（Never ask again）,那么下次再次启动时，还会提示请求权限的对话框
         } else {
-            ToastUtil.show(context.getString(R.string.not_permission).replace("$$", name));
+            ToastUitl.show(context.getString(R.string.not_permission).replace("$$", name));
             //Toast.makeText(context, context.getString(R.string.not_permission).replace("$$", name), Toast.LENGTH_SHORT);
         }
     }

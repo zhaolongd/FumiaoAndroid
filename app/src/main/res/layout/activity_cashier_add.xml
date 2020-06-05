@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg">
+
+    <ImageView
+        android:layout_width="330dp"
+        android:layout_height="136dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/cashier_add_bg"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="1.我们会将收款码邮寄给你"
+        android:textColor="@color/font_title_black"
+        android:textSize="@dimen/font_title"/>
+
+    <ImageView
+        android:layout_width="330dp"
+        android:layout_height="136dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/cashier_add_2_bg"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="2.收到二维码扫描添加"
+        android:textColor="@color/font_title_black"
+        android:textSize="@dimen/font_title"/>
+
+    <Button
+        android:id="@+id/btn_comfirm"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:text="已收到的二维码，去开通"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_press_bg"
+        android:layout_gravity="center"
+        android:textSize="@dimen/font_title" />
+
+</LinearLayout>

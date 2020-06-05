@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/store_type_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/store_cate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/font_press"
+        android:background="@drawable/round_select_bg"
+        android:text="@string/app_name"
+        android:textSize="@dimen/font_content" />
+
+</LinearLayout>
